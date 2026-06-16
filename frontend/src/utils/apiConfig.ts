@@ -1,5 +1,5 @@
 const LOCAL_API_BASE_URL = 'http://localhost:5000';
-const SAME_ORIGIN_API_BASE_URL = '';
+const SAME_ORIGIN_API_BASE_URL = '/_/backend';
 
 const isLocalApiUrl = (url: string) => url.includes('localhost') || url.includes('127.0.0.1');
 

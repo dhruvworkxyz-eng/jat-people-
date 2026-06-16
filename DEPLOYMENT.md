@@ -1,14 +1,13 @@
 # Vercel Deployment
 
-This project deploys the React app from `frontend/dist` and serves backend API routes from `/api/*`.
+This project deploys as a Vercel Services project:
+
+- `frontend` serves the Vite app at `/`
+- `backend` serves the Express API at `/_/backend`
 
 ## Vercel project settings
 
-- Install Command: `cd frontend && npm install`
-- Build Command: `cd frontend && npm run build`
-- Output Directory: `frontend/dist`
-
-These are already configured in `vercel.json`.
+Set the Vercel Framework Preset to **Services**. The services are already configured in `vercel.json`.
 
 ## Required environment variables
 
@@ -27,7 +26,7 @@ RAZORPAY_KEY_ID=your-key-id
 RAZORPAY_KEY_SECRET=your-key-secret
 ```
 
-Do not set `VITE_API_URL` on Vercel unless you intentionally want to use a separate external backend. The deployed app uses same-origin `/api` by default.
+Do not set `VITE_API_URL` on Vercel unless you intentionally want to use a separate external backend. The deployed app uses same-origin `/_/backend` by default.
 
 ## Google OAuth setup
 
@@ -49,7 +48,7 @@ http://localhost:5173
 After deployment, open:
 
 ```text
-https://your-vercel-site.vercel.app/api/health
+https://your-vercel-site.vercel.app/_/backend/api/health
 ```
 
 Expected result:
