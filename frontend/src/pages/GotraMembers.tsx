@@ -6,9 +6,9 @@ import Footer from '../components/Footer';
 import SectionTitle from '../components/SectionTitle';
 import { gotraMembers, sortedGotras } from '../data/sampleData';
 import { AUTH_CHANGED_EVENT, getCurrentUser, type CurrentUser } from '../utils/authStorage';
+import { getApiUrl } from '../utils/apiConfig';
 import './GotraMembers.css';
 
-const API_BASE_URL = import.meta.env.VITE_API_URL || 'http://localhost:5000';
 const LOCAL_SIGNUPS_KEY = 'jat-people-signups';
 
 type Member = {
@@ -122,7 +122,7 @@ const GotraMembers: React.FC = () => {
   useEffect(() => {
     let isMounted = true;
 
-    fetch(`${API_BASE_URL}/api/enrollments`)
+    fetch(getApiUrl('/api/enrollments'))
       .then(response => (response.ok ? response.json() : Promise.reject()))
       .then(data => {
         if (!isMounted || !Array.isArray(data.enrollments)) {

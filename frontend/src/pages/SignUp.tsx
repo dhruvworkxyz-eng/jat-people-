@@ -6,10 +6,10 @@ import Navbar from '../components/Navbar';
 import { sortedGotras, professions, religions } from '../data/sampleData';
 import { countries, getDistrictOptions, statesByCountry } from '../data/locationData';
 import { setCurrentUser } from '../utils/authStorage';
+import { getApiUrl } from '../utils/apiConfig';
 import './Auth.css';
 
 const googleClientId = import.meta.env.VITE_GOOGLE_CLIENT_ID || '';
-const API_BASE_URL = import.meta.env.VITE_API_URL || 'http://localhost:5000';
 const LOCAL_SIGNUPS_KEY = 'jat-people-signups';
 
 type SavedSignup = {
@@ -214,7 +214,7 @@ const SignUp: React.FC = () => {
 
     if (googleCredential) {
       try {
-        const response = await fetch(`${API_BASE_URL}/api/auth/google-signup`, {
+        const response = await fetch(getApiUrl('/api/auth/google-signup'), {
           method: 'POST',
           headers: {
             'Content-Type': 'application/json'

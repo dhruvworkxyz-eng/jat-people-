@@ -4,7 +4,7 @@
   "outputDirectory": "frontend/dist",
   "rewrites": [
     {
-      "source": "/((?!assets/|images/|haryana-jat-logo.svg|vite.svg|react.svg).*)",
+      "source": "/((?!api/|assets/|images/|haryana-jat-logo.svg|vite.svg|react.svg).*)",
       "destination": "/index.html"
     }
   ]

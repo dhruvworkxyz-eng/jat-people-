@@ -4,9 +4,9 @@ import { FaGoogle } from 'react-icons/fa';
 import { GoogleLogin, type CredentialResponse } from '@react-oauth/google';
 import Navbar from '../components/Navbar';
 import { setCurrentUser } from '../utils/authStorage';
+import { getApiUrl } from '../utils/apiConfig';
 import './Auth.css';
 
-const API_BASE_URL = import.meta.env.VITE_API_URL || 'http://localhost:5000';
 const googleClientId = import.meta.env.VITE_GOOGLE_CLIENT_ID || '';
 const LOCAL_SIGNUPS_KEY = 'jat-people-signups';
 
@@ -74,7 +74,7 @@ const SignIn: React.FC = () => {
     setMessage(null);
 
     try {
-      const response = await fetch(`${API_BASE_URL}/api/auth/google-signin`, {
+      const response = await fetch(getApiUrl('/api/auth/google-signin'), {
         method: 'POST',
         headers: {
           'Content-Type': 'application/json'

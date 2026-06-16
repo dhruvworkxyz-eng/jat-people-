@@ -1,3 +1,5 @@
+import { getApiUrl } from './apiConfig';
+
 export type MembershipPlanId = 'yearly' | 'guest';
 
 type RazorpayCheckoutResponse = {
@@ -45,7 +47,6 @@ declare global {
   }
 }
 
-const API_BASE_URL = import.meta.env.VITE_API_URL || 'http://localhost:5000';
 const RAZORPAY_SCRIPT_URL = 'https://checkout.razorpay.com/v1/checkout.js';
 
 const loadRazorpayScript = () =>
@@ -84,7 +85,7 @@ const parseResponse = async (response: Response) => {
 export const startRazorpayPayment = async (planId: MembershipPlanId) => {
   await loadRazorpayScript();
 
-  const orderResponse = await fetch(`${API_BASE_URL}/api/payments/razorpay-order`, {
+  const orderResponse = await fetch(getApiUrl('/api/payments/razorpay-order'), {
     method: 'POST',
     headers: {
       'Content-Type': 'application/json'
@@ -110,7 +111,7 @@ export const startRazorpayPayment = async (planId: MembershipPlanId) => {
       order_id: order.orderId,
       handler: async (paymentResponse) => {
         try {
-          const verifyResponse = await fetch(`${API_BASE_URL}/api/payments/razorpay-verify`, {
+          const verifyResponse = await fetch(getApiUrl('/api/payments/razorpay-verify'), {
             method: 'POST',
             headers: {
               'Content-Type': 'application/json'

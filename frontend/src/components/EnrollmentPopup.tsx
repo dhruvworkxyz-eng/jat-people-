@@ -2,6 +2,7 @@ import { useCallback, useEffect, useState, type ChangeEvent, type FormEvent } fr
 import { FaBriefcase, FaGlobeAsia, FaMapMarkerAlt, FaPhoneAlt, FaTimes, FaUser, FaUsers } from 'react-icons/fa';
 import samelanVideo from '../assets/jaat samaj samelan ad 4.mp4';
 import { professions, religions, sortedGotras } from '../data/sampleData';
+import { getApiUrl } from '../utils/apiConfig';
 import './EnrollmentPopup.css';
 
 type EnrollmentForm = {
@@ -15,7 +16,6 @@ type EnrollmentForm = {
 
 type SubmitState = 'idle' | 'submitting' | 'success' | 'error';
 
-const API_BASE_URL = import.meta.env.VITE_API_URL || 'http://localhost:5000';
 const ENROLLMENT_POPUP_EVENT = 'open-enrollment-popup';
 
 const initialForm: EnrollmentForm = {
@@ -66,7 +66,7 @@ const EnrollmentPopup = () => {
     setMessage('');
 
     try {
-      const response = await fetch(`${API_BASE_URL}/api/enrollments`, {
+      const response = await fetch(getApiUrl('/api/enrollments'), {
         method: 'POST',
         headers: {
           'Content-Type': 'application/json'
