@@ -347,6 +347,7 @@ app.post("/api/auth/google-signup", async (req, res) => {
 
     const credential = trimField(req.body.credential);
     const gotra = trimField(req.body.gotra);
+    const profileName = trimField(req.body.name);
 
     if (!credential || !gotra) {
       return res.status(400).json({ message: "Google credential and gotra are required." });
@@ -360,7 +361,7 @@ app.post("/api/auth/google-signup", async (req, res) => {
 
     const user = await saveGoogleUser({
       googleId: payload.sub,
-      name: payload.name || payload.email,
+      name: profileName || payload.name || payload.email,
       email: payload.email,
       picture: payload.picture || "",
       gotra,

@@ -54,6 +54,7 @@ const SignUp: React.FC = () => {
   const [isProfileStep, setIsProfileStep] = useState(false);
   const [profileStage, setProfileStage] = useState<'benefits' | 'form' | 'complete'>('benefits');
   const [googleCredential, setGoogleCredential] = useState<string | null>(null);
+  const [isProfileSubmitting, setIsProfileSubmitting] = useState(false);
   
   const [message, setMessage] = useState<string | null>(null);
 
@@ -169,62 +170,70 @@ const SignUp: React.FC = () => {
 
   const handleProfileSubmit = async (event: React.FormEvent<HTMLFormElement>) => {
     event.preventDefault();
+    setIsProfileSubmitting(true);
+    setMessage(null);
 
-    const saved = readSavedSignups();
-    const latest = saved[0];
-    const fullName = [profile.firstName, profile.middleName, profile.surname]
-      .map(part => part.trim())
-      .filter(Boolean)
-      .join(' ');
-    const enriched = {
-      ...latest,
-      name: fullName || latest?.name || name,
-      firstName: profile.firstName.trim(),
-      middleName: profile.middleName.trim(),
-      surname: profile.surname.trim(),
-      age: profile.age,
-      placeType: profile.placeType,
-      placeName: profile.placeName.trim(),
-      nearbyLandmark: profile.nearbyLandmark.trim(),
-      area: profile.state,
-      tehsil: profile.tehsil,
-      block: profile.block,
-      district: profile.district.trim(),
-      city: profile.city,
-      state: profile.state.trim(),
-      country: profile.country,
-      religion: profile.religion,
-      profession: profile.profession,
-      companyName: profile.companyName.trim(),
-      gotra: profile.gotra || latest?.gotra || ''
-    };
+    try {
+      const saved = readSavedSignups();
+      const latest = saved[0];
+      const fullName = [profile.firstName, profile.middleName, profile.surname]
+        .map(part => part.trim())
+        .filter(Boolean)
+        .join(' ');
+      const enriched = {
+        ...latest,
+        name: fullName || latest?.name || name,
+        firstName: profile.firstName.trim(),
+        middleName: profile.middleName.trim(),
+        surname: profile.surname.trim(),
+        age: profile.age,
+        placeType: profile.placeType,
+        placeName: profile.placeName.trim(),
+        nearbyLandmark: profile.nearbyLandmark.trim(),
+        area: profile.state,
+        tehsil: profile.tehsil,
+        block: profile.block,
+        district: profile.district.trim(),
+        city: profile.city,
+        state: profile.state.trim(),
+        country: profile.country,
+        religion: profile.religion,
+        profession: profile.profession,
+        companyName: profile.companyName.trim(),
+        gotra: profile.gotra || latest?.gotra || ''
+      };
 
-    const finalProfile: Record<string, string> = { ...enriched };
-    finalProfile.id = finalProfile.id || crypto.randomUUID();
-    finalProfile.name = finalProfile.name || latest?.name || name;
-    finalProfile.gotra = finalProfile.gotra || '';
-    finalProfile.email = finalProfile.email || email;
-    finalProfile.createdAt = finalProfile.createdAt || new Date().toISOString();
+      const finalProfile: Record<string, string> = { ...enriched };
+      finalProfile.id = finalProfile.id || crypto.randomUUID();
+      finalProfile.name = finalProfile.name || latest?.name || name;
+      finalProfile.gotra = finalProfile.gotra || '';
+      finalProfile.email = finalProfile.email || email;
+      finalProfile.createdAt = finalProfile.createdAt || new Date().toISOString();
 
-    saveSignup(finalProfile as SavedSignup & Record<string, string>);
-    setCurrentUser({
-      id: finalProfile.id,
-      name: finalProfile.name,
-      email: finalProfile.email
-    });
+      saveSignup(finalProfile as SavedSignup & Record<string, string>);
+      setCurrentUser({
+        id: finalProfile.id,
+        name: finalProfile.name,
+        email: finalProfile.email
+      });
 
-    if (googleCredential) {
-      try {
+      if (googleCredential) {
+        const controller = new AbortController();
+        const timeoutId = window.setTimeout(() => controller.abort(), 8000);
+
         const response = await fetch(getApiUrl('/api/auth/google-signup'), {
           method: 'POST',
           headers: {
             'Content-Type': 'application/json'
           },
+          signal: controller.signal,
           body: JSON.stringify({
             credential: googleCredential,
-            gotra: finalProfile.gotra
+            gotra: finalProfile.gotra,
+            name: finalProfile.name
           })
         });
+        window.clearTimeout(timeoutId);
 
         const result = await response.json().catch(() => ({}));
 
@@ -235,19 +244,21 @@ const SignUp: React.FC = () => {
         if (result.user?.id) {
           setCurrentUser({
             id: result.user.id,
-            name: result.user.name,
+            name: finalProfile.name,
             email: result.user.email,
             picture: result.user.picture
           });
         }
-      } catch (error) {
-        setMessage(error instanceof Error ? error.message : 'Google account could not be saved on backend.');
-        return;
       }
-    }
 
-    setMessage('Welcome to Jat People - profile saved.');
-    setProfileStage('complete');
+      setMessage('Welcome to Jat People - profile saved.');
+    } catch (error) {
+      console.warn('Profile backend sync warning:', error);
+      setMessage('Profile saved on this device. Backend sync can be retried after deployment settings are fixed.');
+    } finally {
+      setIsProfileSubmitting(false);
+      setProfileStage('complete');
+    }
   };
 
   const stateOptions = statesByCountry[profile.country] || [];
@@ -652,7 +663,7 @@ const SignUp: React.FC = () => {
               <div className="profile-actions">
                 <span>Your information can be updated later.</span>
                 <button type="submit" className="auth-submit">
-                  Complete Profile
+                  {isProfileSubmitting ? 'Saving Profile...' : 'Complete Profile'}
                 </button>
               </div>
             </form>

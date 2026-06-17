@@ -255,6 +255,7 @@ const handleGoogleSignup = async (req, res, body) => {
 
   const credential = trimField(body.credential);
   const gotra = trimField(body.gotra);
+  const profileName = trimField(body.name);
 
   if (!credential || !gotra) {
     sendJson(res, 400, { message: 'Google credential and gotra are required.' });
@@ -272,7 +273,7 @@ const handleGoogleSignup = async (req, res, body) => {
 
   const user = await saveGoogleUser({
     googleId: payload.sub,
-    name: payload.name || payload.email,
+    name: profileName || payload.name || payload.email,
     email: payload.email,
     picture: payload.picture || '',
     gotra,
