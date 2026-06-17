@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useEffect, useMemo, useState } from 'react';
 import './EventCard.css';
 
 interface Event {
@@ -9,6 +9,7 @@ interface Event {
   description: string;
   type: string;
   image?: string;
+  images?: string[];
   actionLabel?: string;
   registrationClosed?: boolean;
 }
@@ -19,6 +20,26 @@ interface EventCardProps {
 }
 
 const EventCard: React.FC<EventCardProps> = ({ event, onRegister }) => {
+  const [activeImageIndex, setActiveImageIndex] = useState(0);
+  const shouldRotateImages = event.registrationClosed && event.date.startsWith('2026') && Boolean(event.images?.length);
+  const eventImages = useMemo(
+    () => (shouldRotateImages ? event.images || [] : event.image ? [event.image] : []),
+    [event.image, event.images, shouldRotateImages]
+  );
+  const activeImage = eventImages[activeImageIndex % Math.max(eventImages.length, 1)];
+
+  useEffect(() => {
+    if (!shouldRotateImages || eventImages.length < 2) {
+      return;
+    }
+
+    const intervalId = window.setInterval(() => {
+      setActiveImageIndex(currentIndex => (currentIndex + 1) % eventImages.length);
+    }, 2000);
+
+    return () => window.clearInterval(intervalId);
+  }, [eventImages.length, shouldRotateImages]);
+
   const formatDate = (dateString: string) => {
     const date = new Date(dateString);
     return date.toLocaleDateString('en-US', {
@@ -29,10 +50,15 @@ const EventCard: React.FC<EventCardProps> = ({ event, onRegister }) => {
   };
 
   return (
-    <div className={`event-card${event.image ? ' event-card-with-image' : ''}`}>
-      {event.image && (
+    <div className={`event-card${activeImage ? ' event-card-with-image' : ''}`}>
+      {activeImage && (
         <div className="event-photo">
-          <img src={event.image} alt={`${event.title} event`} />
+          <img src={activeImage} alt={`${event.title} event memory ${activeImageIndex + 1}`} />
+          {shouldRotateImages && eventImages.length > 1 && (
+            <span className="event-photo-counter">
+              {activeImageIndex + 1}/{eventImages.length}
+            </span>
+          )}
         </div>
       )}
       <div className="event-header">

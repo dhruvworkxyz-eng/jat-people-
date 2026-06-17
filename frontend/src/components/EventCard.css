@@ -17,6 +17,7 @@
 }
 
 .event-photo {
+  position: relative;
   margin: 0 -1.75rem 1.35rem;
   aspect-ratio: 16 / 10;
   overflow: hidden;
@@ -29,6 +30,20 @@
   display: block;
   object-fit: cover;
   transition: transform 0.35s ease;
+}
+
+.event-photo-counter {
+  position: absolute;
+  right: 12px;
+  bottom: 12px;
+  padding: 0.35rem 0.6rem;
+  border: 1px solid rgba(255, 255, 255, 0.22);
+  border-radius: 999px;
+  background: rgba(5, 12, 28, 0.72);
+  color: #ffdf80;
+  font-size: 0.78rem;
+  font-weight: 900;
+  backdrop-filter: blur(12px);
 }
 
 .event-card:hover .event-photo img {

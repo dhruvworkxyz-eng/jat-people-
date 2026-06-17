@@ -129,6 +129,22 @@ export const events = [
     description: 'This Jaat Samelan was held on 22 March with community members, cultural moments, and shared samaj connections.',
     type: 'Past Event',
     image: samelanPhoto3,
+    images: [
+      samelanPhoto1,
+      samelanPhoto2,
+      samelanPhoto3,
+      samelanPhoto4,
+      samelanPhoto5,
+      samelanPhoto6,
+      samelanPhoto7,
+      samelanPhoto8,
+      samelanPhoto9,
+      samelanPhoto10,
+      samelanPhoto11,
+      samelanPhoto12,
+      samelanPhoto13,
+      samelanPhoto14
+    ],
     actionLabel: 'View Memories',
     registrationClosed: true
   },

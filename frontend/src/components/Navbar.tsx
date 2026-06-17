@@ -7,7 +7,25 @@ import './Navbar.css';
 
 const ENROLLMENT_POPUP_EVENT = 'open-enrollment-popup';
 
-const navGroups = [
+type NavItem = {
+  to: string;
+  label: string;
+  action?: 'enroll';
+};
+
+type NavGroup = {
+  label: string;
+  links: NavItem[];
+};
+
+const navGroups: NavGroup[] = [
+  {
+    label: 'Samelan',
+    links: [
+      { to: '/samelan-membership', label: 'Membership' },
+      { to: '/samelan-membership', label: 'Enroll in Samelan', action: 'enroll' }
+    ]
+  },
   {
     label: 'Directory',
     links: [
@@ -26,16 +44,20 @@ const navGroups = [
       { to: '/jat-helpline', label: 'Jat Helpline' },
       { to: '/contact-us', label: 'Contact' }
     ]
+  },
+  {
+    label: 'Media',
+    links: [
+      { to: '/events', label: 'Events' },
+      { to: '/gallery', label: 'Gallery' }
+    ]
   }
 ];
 
-const primaryLinks = [
+const primaryLinks: NavItem[] = [
   { to: '/', label: 'Home' },
   { to: '/about-jat', label: 'About' },
-  { to: '/area-wise-jat?view=map', label: 'Jat Near Me' },
-  { to: '/samelan-membership', label: 'Membership' },
-  { to: '/events', label: 'Events' },
-  { to: '/gallery', label: 'Gallery' }
+  { to: '/area-wise-jat?view=map', label: 'Jat Near Me' }
 ];
 
 const Navbar: React.FC = () => {
@@ -155,7 +177,7 @@ const Navbar: React.FC = () => {
             </div>
 
             <div className="navbar-menu">
-              {primaryLinks.slice(0, 4).map(link => (
+              {primaryLinks.map(link => (
                 <NavLink
                   to={link.to}
                   key={link.to}
@@ -179,27 +201,31 @@ const Navbar: React.FC = () => {
                   </button>
                   <div className="dropdown-menu">
                     {group.links.map(link => (
-                      <NavLink
-                        to={link.to}
-                        key={link.to}
-                        className={({ isActive }) => `dropdown-link${isActive ? ' active' : ''}`}
-                        onClick={closeMenus}
-                      >
-                        {link.label}
-                      </NavLink>
+                      link.action === 'enroll' ? (
+                        <button
+                          type="button"
+                          key={`${group.label}-${link.label}`}
+                          className="dropdown-link dropdown-action"
+                          onClick={() => {
+                            openEnrollmentPopup();
+                            closeMenus();
+                          }}
+                        >
+                          {link.label}
+                        </button>
+                      ) : (
+                        <NavLink
+                          to={link.to}
+                          key={link.to}
+                          className={({ isActive }) => `dropdown-link${isActive ? ' active' : ''}`}
+                          onClick={closeMenus}
+                        >
+                          {link.label}
+                        </NavLink>
+                      )
                     ))}
                   </div>
                 </div>
-              ))}
-              {primaryLinks.slice(4).map(link => (
-                <NavLink
-                  to={link.to}
-                  key={link.to}
-                  className={({ isActive }) => `navbar-link${isActive ? ' active' : ''}`}
-                  onClick={closeMenus}
-                >
-                  {link.label}
-                </NavLink>
               ))}
             </div>
           </div>
@@ -207,9 +233,6 @@ const Navbar: React.FC = () => {
           <div className="navbar-actions">
             <button type="button" className="search-btn" aria-label="Search" onClick={scrollToCommunitySearch}>
               <FaSearch />
-            </button>
-            <button type="button" className="enroll-btn" onClick={openEnrollmentPopup}>
-              <FaUserPlus /> Enroll in Samelan
             </button>
             <div className="navbar-auth-inline">
               {renderUserControls()}
@@ -234,16 +257,32 @@ const Navbar: React.FC = () => {
       </div>
 
       <div className={`mobile-menu ${isMobileMenuOpen ? 'open' : ''}`}>
-        {[...primaryLinks, ...navGroups.flatMap(group => group.links), { to: '/contact-us', label: 'Contact' }].map(link => (
-          <NavLink
-            to={link.to}
-            key={`${link.to}-${link.label}`}
-            className={({ isActive }) => `mobile-link${isActive ? ' active' : ''}`}
-            onClick={closeMenus}
-            end={link.to === '/'}
-          >
-            {link.label}
-          </NavLink>
+        <button type="button" className="mobile-search-box" onClick={scrollToCommunitySearch}>
+          <FaSearch aria-hidden="true" />
+          <span>Search community</span>
+        </button>
+
+        {[...primaryLinks, ...navGroups.flatMap(group => group.links)].map(link => (
+          link.action === 'enroll' ? (
+            <button
+              type="button"
+              key={`${link.to}-${link.label}`}
+              className="mobile-link mobile-action-link"
+              onClick={openMobileEnrollmentPopup}
+            >
+              {link.label}
+            </button>
+          ) : (
+            <NavLink
+              to={link.to}
+              key={`${link.to}-${link.label}`}
+              className={({ isActive }) => `mobile-link${isActive ? ' active' : ''}`}
+              onClick={closeMenus}
+              end={link.to === '/'}
+            >
+              {link.label}
+            </NavLink>
+          )
         ))}
         {currentUser ? (
           <>

@@ -1,5 +1,5 @@
 import React, { useState } from 'react';
-import { Link } from 'react-router-dom';
+import { Link, useNavigate } from 'react-router-dom';
 import { FaGoogle } from 'react-icons/fa';
 import { GoogleLogin, type CredentialResponse } from '@react-oauth/google';
 import Navbar from '../components/Navbar';
@@ -31,6 +31,7 @@ const saveSignups = (signups: SavedSignup[]) => {
 };
 
 const SignIn: React.FC = () => {
+  const navigate = useNavigate();
   const [email, setEmail] = useState('');
   const [password, setPassword] = useState('');
   const [isGoogleSubmitting, setIsGoogleSubmitting] = useState(false);
@@ -61,7 +62,12 @@ const SignIn: React.FC = () => {
       email: savedUser.email
     });
     setPassword('');
-    setMessage(`Welcome, ${savedUser.name}.`);
+    navigate('/', {
+      state: {
+        welcomeMessage: `Welcome, ${savedUser.name}.`
+      },
+      replace: true
+    });
   };
 
   const handleGoogleSuccess = async (credentialResponse: CredentialResponse) => {
@@ -100,7 +106,12 @@ const SignIn: React.FC = () => {
       }
 
       const signedInName = result.user?.name || result.user?.email || 'User';
-      setMessage(`Welcome, ${signedInName}.`);
+      navigate('/', {
+        state: {
+          welcomeMessage: `Welcome, ${signedInName}.`
+        },
+        replace: true
+      });
     } catch (error) {
       setMessage(error instanceof Error ? error.message : 'Google sign in failed. Please try again.');
     } finally {

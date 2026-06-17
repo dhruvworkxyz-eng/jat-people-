@@ -13,6 +13,77 @@
   margin: 0 auto;
 }
 
+.home-welcome-toast {
+  position: fixed;
+  top: 96px;
+  left: 50%;
+  z-index: 990;
+  display: inline-flex;
+  align-items: center;
+  gap: 0.9rem;
+  max-width: min(520px, calc(100% - 32px));
+  padding: 0.75rem 0.85rem 0.75rem 1rem;
+  border: 1px solid rgba(241, 184, 75, 0.36);
+  border-radius: 999px;
+  background: rgba(5, 10, 25, 0.9);
+  box-shadow: 0 18px 55px rgba(0, 0, 0, 0.24);
+  color: #ffdf80;
+  font-weight: 900;
+  transform: translateX(-50%);
+  backdrop-filter: blur(18px);
+}
+
+.home-welcome-toast span {
+  min-width: 0;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+
+.home-welcome-toast button {
+  flex: 0 0 auto;
+  width: 32px;
+  height: 32px;
+  display: grid;
+  place-items: center;
+  border: none;
+  border-radius: 999px;
+  background: rgba(255, 255, 255, 0.1);
+  color: white;
+  cursor: pointer;
+}
+
+.home-directory-toast {
+  top: 106px;
+  padding-left: 1.1rem;
+}
+
+.home-directory-toast::before {
+  content: '';
+  position: absolute;
+  top: -9px;
+  left: 50%;
+  width: 18px;
+  height: 18px;
+  border-top: 1px solid rgba(241, 184, 75, 0.36);
+  border-left: 1px solid rgba(241, 184, 75, 0.36);
+  background: rgba(5, 10, 25, 0.9);
+  transform: translateX(-50%) rotate(45deg);
+}
+
+.home-directory-toast a {
+  position: relative;
+  z-index: 1;
+  flex: 0 0 auto;
+  padding: 0.38rem 0.7rem;
+  border-radius: 999px;
+  background: #f1b84b;
+  color: #07142b;
+  font-size: 0.82rem;
+  font-weight: 950;
+  text-decoration: none;
+}
+
 .counter-band {
   position: relative;
   z-index: 3;
@@ -833,6 +904,17 @@
   .counter-band {
     margin-top: 0;
     padding-top: 1rem;
+  }
+
+  .home-welcome-toast {
+    top: 80px;
+    border-radius: 8px;
+  }
+
+  .home-directory-toast {
+    top: 84px;
+    flex-wrap: wrap;
+    justify-content: center;
   }
 
   .portal-section,

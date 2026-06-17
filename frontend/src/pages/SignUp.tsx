@@ -1,5 +1,5 @@
 import React, { useState } from 'react';
-import { Link } from 'react-router-dom';
+import { Link, useNavigate } from 'react-router-dom';
 import { FaAddressBook, FaCheck, FaGoogle, FaHandshake, FaMapMarkerAlt, FaSearch, FaUser, FaUsers } from 'react-icons/fa';
 import { GoogleLogin, type CredentialResponse } from '@react-oauth/google';
 import Navbar from '../components/Navbar';
@@ -46,6 +46,7 @@ const saveSignup = (signup: SavedSignup) => {
 };
 
 const SignUp: React.FC = () => {
+  const navigate = useNavigate();
   const [name, setName] = useState('');
   const [email, setEmail] = useState('');
   const [password, setPassword] = useState('');
@@ -668,7 +669,17 @@ const SignUp: React.FC = () => {
                 <p>Your profile is saved and your name has been added to the Jat People community directories.</p>
                 <div className="completion-links">
                   <Link to="/area-wise-jat">Explore Area Directory</Link>
-                  <button type="button" onClick={() => setIsProfileStep(false)}>Continue to Website</button>
+                  <button
+                    type="button"
+                    onClick={() => navigate('/', {
+                      state: {
+                        directoryMessage: 'Your info has been stored in the Directory. Open Directory to find your profile.'
+                      },
+                      replace: true
+                    })}
+                  >
+                    Continue to Website
+                  </button>
                 </div>
               </div>
             )}

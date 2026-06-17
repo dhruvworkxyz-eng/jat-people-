@@ -1,5 +1,5 @@
-import React, { useMemo, useState } from 'react';
-import { Link } from 'react-router-dom';
+import React, { useEffect, useMemo, useState } from 'react';
+import { Link, useLocation, useNavigate } from 'react-router-dom';
 import {
   FaBuilding,
   FaCalendarAlt,
@@ -106,8 +106,12 @@ type CommunitySearchResult = {
 const normalize = (value = '') => value.trim().toLowerCase();
 
 const Home: React.FC = () => {
+  const location = useLocation();
+  const navigate = useNavigate();
   const [payingPlanId, setPayingPlanId] = useState<MembershipPlanId | null>(null);
   const [paymentMessage, setPaymentMessage] = useState('');
+  const [welcomeMessage, setWelcomeMessage] = useState('');
+  const [directoryMessage, setDirectoryMessage] = useState('');
   const [filters, setFilters] = useState({
     gotra: '',
     area: '',
@@ -124,6 +128,24 @@ const Home: React.FC = () => {
     () => Object.values(filters).some(value => Boolean(value.trim())),
     [filters]
   );
+
+  useEffect(() => {
+    const state = location.state as { welcomeMessage?: string; directoryMessage?: string } | null;
+
+    if (!state?.welcomeMessage && !state?.directoryMessage) {
+      return;
+    }
+
+    if (state.welcomeMessage) {
+      setWelcomeMessage(state.welcomeMessage);
+    }
+
+    if (state.directoryMessage) {
+      setDirectoryMessage(state.directoryMessage);
+    }
+
+    navigate(location.pathname, { replace: true });
+  }, [location.pathname, location.state, navigate]);
 
   const communityResults = useMemo<CommunitySearchResult[]>(() => {
     let savedProfiles: CommunitySearchResult[] = [];
@@ -228,6 +250,23 @@ const Home: React.FC = () => {
     <div className="home premium-home">
       <Navbar />
       <Hero />
+      {welcomeMessage && (
+        <div className="home-welcome-toast" role="status" aria-live="polite">
+          <span>{welcomeMessage}</span>
+          <button type="button" aria-label="Dismiss welcome message" onClick={() => setWelcomeMessage('')}>
+            <FaTimes />
+          </button>
+        </div>
+      )}
+      {directoryMessage && (
+        <div className="home-welcome-toast home-directory-toast" role="status" aria-live="polite">
+          <span>{directoryMessage}</span>
+          <Link to="/area-wise-jat">Directory</Link>
+          <button type="button" aria-label="Dismiss directory message" onClick={() => setDirectoryMessage('')}>
+            <FaTimes />
+          </button>
+        </div>
+      )}
       <EventImageMarquee />
 
       <section className="counter-band" aria-label="Community statistics">

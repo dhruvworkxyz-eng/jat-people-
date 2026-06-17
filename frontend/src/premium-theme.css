@@ -63,26 +63,22 @@ h2,
 }
 
 .navbar-container {
-  height: 76px;
-  border: 1px solid rgba(255, 255, 255, 0.1);
-  background: rgba(10, 15, 30, 0.7);
-  box-shadow: 0 20px 70px rgba(0, 0, 0, 0.34);
-  backdrop-filter: blur(24px);
+  height: 68px;
 }
 
 .navbar-logo a {
-  gap: 0.75rem;
+  gap: 0.45rem;
 }
 
 .logo-mark {
-  width: 50px;
-  height: 50px;
+  width: 42px;
+  height: 42px;
 }
 
 .logo-text {
   color: #ffffff;
   font-family: 'Cinzel', Georgia, serif;
-  font-size: 1.12rem;
+  font-size: 1rem;
 }
 
 .navbar-link,
@@ -91,30 +87,14 @@ h2,
   color: rgba(255, 255, 255, 0.82);
 }
 
-.navbar-link:hover,
-.dropdown-trigger:hover {
-  background: rgba(255, 255, 255, 0.09);
-  color: #d4af37;
-}
-
 .dropdown-menu,
 .mobile-menu {
-  border-color: rgba(255, 255, 255, 0.1);
-  border-radius: 8px;
-  background: rgba(10, 15, 30, 0.92);
   box-shadow: 0 24px 80px rgba(0, 0, 0, 0.42);
-}
-
-.dropdown-menu a:hover,
-.mobile-link:hover {
-  background: rgba(212, 175, 55, 0.12);
-  color: #d4af37;
 }
 
 .search-btn,
 .mobile-menu-toggle {
-  border-color: rgba(255, 255, 255, 0.1);
-  background: rgba(255, 255, 255, 0.06);
+  border-color: rgba(255, 255, 255, 0.16);
 }
 
 .join-btn,
@@ -629,7 +609,8 @@ h2,
 
 @media (max-width: 1040px) {
   .navbar-container {
-    width: min(760px, calc(100% - 28px));
+    width: fit-content;
+    max-width: calc(100% - 24px);
   }
 
   .mobile-menu {
@@ -652,17 +633,17 @@ h2,
   }
 
   .navbar-container {
-    height: 66px;
-    padding: 0 10px 0 12px;
+    height: 60px;
+    padding: 0 9px 0 10px;
   }
 
   .logo-mark {
-    width: 44px;
-    height: 44px;
+    width: 36px;
+    height: 36px;
   }
 
   .logo-text {
-    font-size: 0.96rem;
+    font-size: 0.9rem;
   }
 
   .mobile-menu {
