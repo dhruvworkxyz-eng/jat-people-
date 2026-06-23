@@ -1,0 +1,255 @@
+.jat-records-page {
+  min-height: 100vh;
+  background: #f7f3ec;
+  color: #172033;
+}
+
+.records-hero {
+  position: relative;
+  overflow: hidden;
+  padding: 8.5rem 0 5rem;
+  background:
+    linear-gradient(120deg, rgba(5, 18, 38, 0.94), rgba(88, 54, 12, 0.74)),
+    url('/images/jat-community-gathering.png') center / cover;
+  color: white;
+}
+
+.records-hero-inner {
+  display: grid;
+  grid-template-columns: minmax(0, 1fr) minmax(270px, 360px);
+  gap: 2rem;
+  align-items: center;
+}
+
+.records-kicker {
+  display: inline-flex;
+  margin-bottom: 1rem;
+  color: #f1b84b;
+  font-size: 0.82rem;
+  font-weight: 950;
+  letter-spacing: 0.14em;
+  text-transform: uppercase;
+}
+
+.records-hero h1 {
+  max-width: 780px;
+  margin: 0;
+  font-size: clamp(2.7rem, 7vw, 5.2rem);
+  line-height: 0.98;
+  color: white;
+}
+
+.records-hero .hero-subtitle {
+  max-width: 720px;
+  margin: 1rem 0 0;
+  color: rgba(255, 255, 255, 0.84);
+  line-height: 1.72;
+}
+
+.records-hero-card {
+  display: grid;
+  gap: 0.85rem;
+  padding: 1.5rem;
+  border: 1px solid rgba(255, 255, 255, 0.2);
+  border-radius: 8px;
+  background: rgba(255, 255, 255, 0.12);
+  box-shadow: 0 28px 70px rgba(0, 0, 0, 0.24);
+  backdrop-filter: blur(18px);
+}
+
+.records-hero-card svg {
+  width: 48px;
+  height: 48px;
+  color: #f1b84b;
+}
+
+.records-hero-card strong {
+  color: white;
+  font-size: 1.55rem;
+}
+
+.records-hero-card span {
+  color: rgba(255, 255, 255, 0.78);
+  line-height: 1.55;
+}
+
+.records-section,
+.records-people-section {
+  padding: 5rem 0;
+}
+
+.records-people-section {
+  background: #fffaf2;
+}
+
+.people-record-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+  gap: 1.25rem;
+}
+
+.person-record-card {
+  overflow: hidden;
+  border: 1px solid rgba(13, 39, 66, 0.1);
+  border-radius: 8px;
+  background: #ffffff;
+  box-shadow: 0 20px 50px rgba(13, 39, 66, 0.1);
+  transition: transform 0.22s ease, box-shadow 0.22s ease;
+}
+
+.person-record-card:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 28px 64px rgba(13, 39, 66, 0.16);
+}
+
+.person-photo-wrap {
+  position: relative;
+  height: 270px;
+  display: grid;
+  place-items: center;
+  overflow: hidden;
+  background: linear-gradient(135deg, #0d2742, #7b5519);
+}
+
+.person-photo-wrap img {
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.person-photo-fallback {
+  color: #f1b84b;
+  font-size: 2.8rem;
+  font-weight: 950;
+}
+
+.person-record-content {
+  padding: 1.25rem;
+}
+
+.person-record-content span {
+  display: inline-flex;
+  margin-bottom: 0.65rem;
+  border-radius: 999px;
+  background: #f3eadc;
+  color: #7b5519;
+  padding: 0.35rem 0.7rem;
+  font-size: 0.78rem;
+  font-weight: 900;
+}
+
+.person-record-content h3 {
+  margin: 0 0 0.65rem;
+  color: #0d2742;
+  font-size: 1.3rem;
+}
+
+.person-record-content p {
+  margin: 0;
+  color: #566173;
+  line-height: 1.62;
+}
+
+.records-section {
+  background:
+    radial-gradient(circle at 8% 10%, rgba(241, 184, 75, 0.18), transparent 23rem),
+    #f7f3ec;
+}
+
+.records-grid {
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: 1.25rem;
+}
+
+.record-category-card,
+.records-closing-panel {
+  border: 1px solid rgba(13, 39, 66, 0.1);
+  border-radius: 8px;
+  background: rgba(255, 255, 255, 0.92);
+  box-shadow: 0 20px 50px rgba(13, 39, 66, 0.1);
+}
+
+.record-category-card {
+  display: grid;
+  gap: 0.9rem;
+  padding: 1.35rem;
+}
+
+.record-icon {
+  width: 54px;
+  height: 54px;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: 8px;
+  background: #0d2742;
+  color: #f1b84b;
+  font-size: 1.35rem;
+}
+
+.record-category-card h3,
+.records-closing-panel h2 {
+  margin: 0;
+  color: #0d2742;
+}
+
+.record-category-card p,
+.records-closing-panel p {
+  margin: 0;
+  color: #566173;
+  line-height: 1.65;
+}
+
+.record-category-card ul {
+  display: grid;
+  gap: 0.45rem;
+  margin: 0;
+  padding-left: 1.1rem;
+  color: #7b5519;
+  font-weight: 800;
+}
+
+.records-closing-panel {
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+  margin-top: 1.5rem;
+  padding: 1.5rem;
+  background:
+    linear-gradient(135deg, rgba(13, 39, 66, 0.94), rgba(6, 18, 36, 0.9)),
+    url('/images/jat-heritage-hero.png') center / cover;
+}
+
+.records-closing-panel svg {
+  flex: 0 0 auto;
+  width: 42px;
+  height: 42px;
+  color: #f1b84b;
+}
+
+.records-closing-panel p {
+  color: rgba(255, 255, 255, 0.88);
+  font-size: 1.05rem;
+  font-weight: 700;
+}
+
+@media (max-width: 920px) {
+  .records-hero-inner,
+  .records-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .records-hero {
+    padding: 7rem 0 4rem;
+  }
+}
+
+@media (max-width: 620px) {
+  .records-closing-panel {
+    align-items: flex-start;
+    flex-direction: column;
+  }
+}

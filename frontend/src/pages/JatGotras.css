@@ -1,0 +1,345 @@
+/* Jat Gotras Page Styles */
+.jat-gotras {
+  min-height: 100vh;
+}
+
+/* Hero Section */
+.jat-gotras .gotras-hero {
+  background: linear-gradient(135deg, #003366, #001122);
+  color: white;
+  padding: 7rem 0 2rem;
+  text-align: center;
+}
+
+.jat-gotras .gotras-hero h1 {
+  font-size: clamp(2.5rem, 5vw, 4rem);
+  font-weight: 800;
+  margin-bottom: 0.5rem;
+  text-shadow: 0 4px 20px rgba(0, 0, 0, 0.3);
+}
+
+.jat-gotras .gotras-hero::after {
+  height: 48px;
+}
+
+.jat-gotras .hero-subtitle {
+  font-size: clamp(1rem, 2vw, 1.25rem);
+  opacity: 0.9;
+  margin-bottom: 1.25rem;
+}
+
+.jat-gotras .search-section {
+  width: min(850px, 88vw);
+  max-width: 850px;
+  margin: 0 auto;
+  padding: 0;
+  border: none;
+  background: transparent;
+  box-shadow: none;
+}
+
+.jat-gotras .search-section .search-bar {
+  width: 100%;
+  max-width: 100%;
+  margin: 0;
+  padding: 0;
+  border: none;
+  background: transparent;
+  box-shadow: none;
+}
+
+.jat-gotras .search-section .search-input-container {
+  width: 100%;
+  height: auto;
+  margin: 0;
+  padding: 0;
+  border: none;
+  background: transparent;
+  box-shadow: none;
+}
+
+.jat-gotras .search-section .search-input {
+  min-height: 58px;
+  padding: 14px 68px 14px 22px;
+  border: 1px solid rgba(212, 175, 55, 0.32);
+  background: rgba(11, 18, 32, 0.82);
+  box-shadow: 0 18px 48px rgba(0, 0, 0, 0.28);
+  color: #ffffff;
+}
+
+.jat-gotras .search-section .search-button {
+  width: 46px;
+  height: 46px;
+  right: 6px;
+}
+
+.jat-gotras .search-section .search-icon {
+  font-size: 16px;
+}
+
+/* Gotras Section */
+.jat-gotras .gotras-section {
+  background: linear-gradient(135deg, rgba(0, 51, 102, 0.05), rgba(255, 153, 51, 0.05));
+  padding: 2.75rem 0 5rem;
+}
+
+.jat-gotras .gotras-section .section-title {
+  margin-bottom: 1.75rem;
+}
+
+.jat-gotras .gotras-section .subtitle,
+.jat-gotras .gotras-section .centered .subtitle {
+  margin-bottom: 1rem;
+}
+
+.jat-gotras .gotras-section .title-decoration {
+  margin-top: 0.75rem;
+}
+
+.gotra-alphabet-list {
+  display: grid;
+  gap: 2rem;
+  margin-bottom: 4rem;
+}
+
+.gotra-letter-section {
+  display: grid;
+  gap: 1rem;
+}
+
+.gotra-letter-heading {
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+  padding-bottom: 0.75rem;
+  border-bottom: 1px solid rgba(0, 51, 102, 0.14);
+}
+
+.gotra-letter-heading span {
+  display: inline-grid;
+  width: 48px;
+  height: 48px;
+  place-items: center;
+  border-radius: 8px;
+  background: #003366;
+  color: white;
+  font-size: 1.4rem;
+  font-weight: 800;
+}
+
+.gotra-letter-heading p {
+  margin: 0;
+  color: #596272;
+  font-weight: 700;
+}
+
+.gotras-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
+  gap: 1.5rem;
+}
+
+.gotra-card {
+  background: white;
+  border-radius: 15px;
+  padding: 2rem;
+  box-shadow: 0 8px 25px rgba(0, 0, 0, 0.1);
+  border: 1px solid rgba(0, 123, 191, 0.1);
+  transition: all 0.3s ease;
+  position: relative;
+  overflow: hidden;
+}
+
+.gotra-card:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 15px 35px rgba(0, 0, 0, 0.15);
+}
+
+.gotra-card::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: -100%;
+  width: 100%;
+  height: 100%;
+  background: linear-gradient(90deg, transparent, rgba(255, 153, 51, 0.05), transparent);
+  transition: left 0.5s ease;
+}
+
+.gotra-card:hover::before {
+  left: 100%;
+}
+
+.gotra-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 1.5rem;
+}
+
+.gotra-name {
+  font-size: 1.4rem;
+  font-weight: 700;
+  color: #003366;
+}
+
+.gotra-icon {
+  font-size: 1.5rem;
+  opacity: 0.7;
+}
+
+.gotra-actions {
+  display: flex;
+  gap: 0.75rem;
+}
+
+.connect-btn,
+.learn-more-btn {
+  padding: 0.75rem 1.5rem;
+  border-radius: 25px;
+  font-weight: 600;
+  font-size: 0.9rem;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  border: none;
+  flex: 1;
+}
+
+.connect-btn {
+  background: linear-gradient(135deg, #003366, #FF9933);
+  color: white;
+}
+
+.connect-btn:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 8px 25px rgba(0, 51, 102, 0.3);
+}
+
+.learn-more-btn {
+  background: rgba(0, 123, 191, 0.1);
+  color: #003366;
+}
+
+.learn-more-btn:hover {
+  background: rgba(0, 123, 191, 0.2);
+  transform: translateY(-2px);
+}
+
+/* No Results */
+.no-results {
+  text-align: center;
+  padding: 3rem;
+  background: white;
+  border-radius: 15px;
+  box-shadow: 0 8px 25px rgba(0, 0, 0, 0.1);
+  margin-bottom: 4rem;
+}
+
+.no-results h3 {
+  color: #003366;
+  margin-bottom: 1rem;
+}
+
+.no-results p {
+  color: #666;
+  margin-bottom: 2rem;
+}
+
+.reset-search-btn {
+  background: linear-gradient(135deg, #003366, #FF9933);
+  color: white;
+  border: none;
+  padding: 12px 24px;
+  border-radius: 25px;
+  font-weight: 600;
+  cursor: pointer;
+  transition: all 0.3s ease;
+}
+
+.reset-search-btn:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 8px 25px rgba(0, 51, 102, 0.3);
+}
+
+/* Info Section */
+.gotras-info {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+  gap: 2rem;
+}
+
+.info-card {
+  background: white;
+  border-radius: 15px;
+  padding: 2rem;
+  box-shadow: 0 8px 25px rgba(0, 0, 0, 0.1);
+  border: 1px solid rgba(0, 123, 191, 0.1);
+  transition: all 0.3s ease;
+}
+
+.info-card:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 15px 35px rgba(0, 0, 0, 0.15);
+}
+
+.info-card h4 {
+  font-size: 1.3rem;
+  color: #003366;
+  margin-bottom: 1rem;
+  font-weight: 600;
+}
+
+.info-card p {
+  color: #666;
+  line-height: 1.6;
+}
+
+/* Responsive */
+@media (max-width: 768px) {
+  .jat-gotras .gotras-hero {
+    padding: 5.5rem 0 1.75rem;
+  }
+
+  .jat-gotras .gotras-section {
+    padding: 2.25rem 0 3.5rem;
+  }
+
+  .jat-gotras .search-section {
+    width: 95vw;
+    max-width: 95vw;
+  }
+
+  .jat-gotras .search-section .search-input {
+    min-height: 52px;
+    padding: 12px 60px 12px 16px;
+  }
+
+  .jat-gotras .search-section .search-button {
+    width: 42px;
+    height: 42px;
+  }
+
+  .gotras-grid {
+    grid-template-columns: 1fr;
+    gap: 1rem;
+  }
+
+  .gotra-letter-heading span {
+    width: 42px;
+    height: 42px;
+    font-size: 1.2rem;
+  }
+
+  .gotra-actions {
+    flex-direction: column;
+  }
+
+  .connect-btn,
+  .learn-more-btn {
+    width: 100%;
+  }
+
+  .gotras-info {
+    grid-template-columns: 1fr;
+  }
+}

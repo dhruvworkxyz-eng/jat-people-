@@ -1,0 +1,11 @@
+{
+  "auth": {
+    "providers": {
+      "emailPassword": true,
+      "googleSignIn": {
+        "oAuthBrandDisplayName": "jat Samelan",
+        "supportEmail": "jmannadv@gmail.com"
+      }
+    }
+  }
+}

@@ -1,0 +1,230 @@
+@media (max-width: 1620px) {
+  .navbar {
+    display: grid;
+    justify-content: stretch;
+    padding-inline: 12px;
+  }
+
+  .navbar-container {
+    justify-self: center;
+    width: min(980px, 100%) !important;
+    max-width: none !important;
+  }
+
+  .navbar-auth-corner,
+  .navbar-menu,
+  .navbar-actions {
+    display: none;
+  }
+
+  .mobile-menu-toggle {
+    display: grid;
+    place-items: center;
+  }
+
+  .navbar-main {
+    width: 100%;
+  }
+}
+
+@media (max-width: 900px) {
+  .events-grid,
+  .organisations-grid,
+  .profession-grid,
+  .profession-category-grid,
+  .clubs-grid,
+  .records-grid,
+  .people-record-grid,
+  .gallery-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .organisation-card,
+  .club-card,
+  .event-card,
+  .record-category-card,
+  .person-record-card {
+    min-width: 0;
+  }
+
+  .org-header,
+  .club-header,
+  .featured-record-card div,
+  .event-header {
+    align-items: flex-start;
+    flex-direction: column;
+  }
+
+  .org-footer,
+  .club-actions,
+  .map-actions,
+  .explorer-actions,
+  .hero-cta,
+  .hero-actions {
+    display: grid;
+    width: 100%;
+    grid-template-columns: 1fr;
+  }
+
+  .join-org-btn,
+  .join-club-btn,
+  .host-btn,
+  .upload-btn,
+  .explore-map-btn,
+  .directory-action-btn,
+  .hero-btn,
+  .call-btn,
+  .secondary-call {
+    width: 100%;
+  }
+}
+
+@media (max-width: 760px) {
+  .auth-shell,
+  .contact-section,
+  .events-section,
+  .gallery-section,
+  .organisations-section,
+  .clubs-section,
+  .records-section,
+  .records-people-section,
+  .religions-section,
+  .profession-section,
+  .samelan-plans-section,
+  .membership-pricing-section {
+    padding-top: 3rem;
+    padding-bottom: 3rem;
+  }
+
+  .auth-card,
+  .contact-form,
+  .info-card,
+  .host-card,
+  .upload-card,
+  .presence-content,
+  .records-submit-panel,
+  .unity-card {
+    padding: 1.25rem;
+  }
+
+  .gallery-modal {
+    padding: 12px;
+  }
+
+  .gallery-modal-content img {
+    max-height: 64vh;
+  }
+
+  .gallery-modal-close {
+    top: 8px;
+    right: 8px;
+  }
+}
+
+@media (max-width: 640px) {
+  .navbar-mobile-user {
+    display: none;
+  }
+
+  .navbar {
+    padding-inline: 9px;
+  }
+
+  .navbar-container {
+    width: 100% !important;
+  }
+
+  .mobile-menu {
+    justify-self: stretch;
+    width: 100% !important;
+    margin-inline: 0;
+  }
+
+  .mobile-link {
+    min-height: 46px;
+    padding: 0.78rem 0.85rem;
+    overflow-wrap: anywhere;
+  }
+
+  .counter-card,
+  .portal-card,
+  .home-membership-card,
+  .glass-panel,
+  .feature-wide-card,
+  .search-console,
+  .home-search-result-card,
+  .member-row,
+  .directory-member-card,
+  .religion-card,
+  .profession-card,
+  .organisation-card,
+  .club-card,
+  .event-card,
+  .person-record-card,
+  .record-category-card {
+    border-radius: 8px;
+  }
+
+  .home-search-result-card,
+  .member-row {
+    grid-template-columns: 44px minmax(0, 1fr);
+    gap: 0.75rem;
+  }
+
+  .home-search-avatar,
+  .member-initial {
+    width: 44px;
+    height: 44px;
+  }
+
+  .home-search-result-card dl {
+    grid-template-columns: 1fr;
+  }
+
+  .home-search-result-card dd {
+    margin-bottom: 0.35rem;
+  }
+
+  .person-photo-wrap,
+  .gallery-image-container {
+    height: 220px;
+  }
+
+  .alipur-map-card,
+  .full-map-section .alipur-map-card {
+    min-height: 360px;
+  }
+
+  .alipur-details-panel,
+  .full-map-section .alipur-details-panel {
+    min-height: auto;
+  }
+}
+
+@media (max-width: 420px) {
+  .logo-text {
+    max-width: 36vw;
+  }
+
+  .mobile-menu {
+    padding: 0.5rem;
+  }
+
+  .hero-photo-caption,
+  .community-post-header,
+  .home-search-results-heading,
+  .gallery-modal-caption {
+    align-items: flex-start;
+    flex-direction: column;
+  }
+
+  .event-marquee-card {
+    height: 135px;
+  }
+
+  .form-row,
+  .profile-field-grid,
+  .search-grid {
+    grid-template-columns: 1fr;
+  }
+}

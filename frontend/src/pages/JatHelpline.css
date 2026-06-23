@@ -1,0 +1,400 @@
+.jat-helpline {
+  min-height: 100vh;
+  background: #f6f8fb;
+  color: #172235;
+}
+
+.helpline-hero {
+  position: relative;
+  overflow: hidden;
+  padding: 9rem 0 5rem;
+  background:
+    linear-gradient(120deg, rgba(4, 20, 43, 0.9), rgba(10, 47, 77, 0.78)),
+    url('/images/jat-community-gathering.png') center/cover;
+  color: #ffffff;
+}
+
+.helpline-hero::after {
+  content: "";
+  position: absolute;
+  inset: auto 0 0;
+  height: 5rem;
+  background: linear-gradient(180deg, transparent, rgba(246, 248, 251, 0.98));
+  pointer-events: none;
+}
+
+.helpline-hero-inner {
+  position: relative;
+  z-index: 1;
+  display: grid;
+  grid-template-columns: minmax(0, 1fr) minmax(280px, 370px);
+  gap: 2rem;
+  align-items: center;
+}
+
+.helpline-kicker {
+  display: inline-flex;
+  margin-bottom: 1rem;
+  padding: 0.45rem 0.75rem;
+  border: 1px solid rgba(255, 204, 102, 0.34);
+  border-radius: 999px;
+  background: rgba(255, 255, 255, 0.11);
+  color: #ffdf80;
+  font-size: 0.78rem;
+  font-weight: 900;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+  backdrop-filter: blur(14px);
+}
+
+.helpline-hero h1 {
+  max-width: 760px;
+  margin: 0;
+  color: #ffffff;
+  font-size: clamp(2.5rem, 6vw, 5rem);
+  font-weight: 850;
+  line-height: 1.02;
+}
+
+.hero-subtitle {
+  max-width: 680px;
+  margin: 1rem 0 0;
+  color: rgba(255, 255, 255, 0.84);
+  font-size: clamp(1rem, 2vw, 1.24rem);
+  line-height: 1.7;
+}
+
+.hero-actions {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.8rem;
+  margin-top: 1.6rem;
+}
+
+.call-btn,
+.secondary-call,
+.submit-btn {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 0.5rem;
+  min-height: 44px;
+  border-radius: 999px;
+  border: 0;
+  cursor: pointer;
+  font-weight: 900;
+  text-decoration: none;
+  transition: transform 0.2s ease, box-shadow 0.2s ease, background 0.2s ease;
+}
+
+.call-btn {
+  padding: 0 1.15rem;
+  background: linear-gradient(135deg, #d93d34, #ff9933);
+  color: #ffffff;
+  box-shadow: 0 12px 26px rgba(217, 61, 52, 0.24);
+}
+
+.primary-call {
+  min-height: 50px;
+  padding: 0 1.35rem;
+}
+
+.secondary-call {
+  min-height: 50px;
+  padding: 0 1.2rem;
+  border: 1px solid rgba(255, 255, 255, 0.28);
+  background: rgba(255, 255, 255, 0.1);
+  color: #ffffff;
+  backdrop-filter: blur(12px);
+}
+
+.call-btn:hover,
+.secondary-call:hover,
+.submit-btn:hover {
+  transform: translateY(-2px);
+}
+
+.helpline-hero-card {
+  display: grid;
+  gap: 0.55rem;
+  padding: 1.35rem;
+  border: 1px solid rgba(255, 255, 255, 0.18);
+  border-radius: 8px;
+  background: rgba(255, 255, 255, 0.13);
+  box-shadow: 0 22px 60px rgba(0, 0, 0, 0.24);
+  backdrop-filter: blur(18px);
+}
+
+.helpline-hero-card svg {
+  width: 42px;
+  height: 42px;
+  color: #ffdf80;
+}
+
+.helpline-hero-card span {
+  color: rgba(255, 255, 255, 0.72);
+  font-size: 0.8rem;
+  font-weight: 900;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+}
+
+.helpline-hero-card strong {
+  color: #ffffff;
+  font-size: clamp(1.65rem, 3vw, 2.4rem);
+  line-height: 1.1;
+}
+
+.helpline-hero-card a {
+  width: fit-content;
+  color: #ffdf80;
+  font-weight: 900;
+}
+
+.emergency-section,
+.support-section,
+.contact-section {
+  padding: 5rem 0;
+}
+
+.emergency-section {
+  background: #f6f8fb;
+}
+
+.emergency-grid {
+  display: grid;
+  grid-template-columns: repeat(4, minmax(0, 1fr));
+  gap: 1rem;
+}
+
+.helpline-card,
+.support-card,
+.helpline-form {
+  border: 1px solid rgba(0, 51, 102, 0.1);
+  border-radius: 8px;
+  background: #ffffff;
+  box-shadow: 0 18px 45px rgba(18, 24, 38, 0.08);
+}
+
+.helpline-card {
+  display: grid;
+  gap: 1rem;
+  padding: 1.25rem;
+  transition: transform 0.2s ease, box-shadow 0.2s ease, border-color 0.2s ease;
+}
+
+.helpline-card:hover,
+.support-card:hover {
+  transform: translateY(-3px);
+  border-color: rgba(255, 153, 51, 0.34);
+  box-shadow: 0 24px 55px rgba(18, 24, 38, 0.12);
+}
+
+.helpline-header {
+  display: grid;
+  gap: 0.65rem;
+}
+
+.helpline-header h3 {
+  margin: 0;
+  color: #003366;
+  font-size: 1.12rem;
+  font-weight: 850;
+  line-height: 1.25;
+}
+
+.helpline-type {
+  width: fit-content;
+  padding: 0.35rem 0.65rem;
+  border-radius: 999px;
+  background: rgba(217, 61, 52, 0.1);
+  color: #b72f27;
+  font-size: 0.72rem;
+  font-weight: 900;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+}
+
+.helpline-type.legal {
+  background: rgba(0, 51, 102, 0.09);
+  color: #003366;
+}
+
+.helpline-type.medical {
+  background: rgba(23, 104, 62, 0.1);
+  color: #17683e;
+}
+
+.helpline-type.business {
+  background: rgba(255, 153, 51, 0.16);
+  color: #9a5409;
+}
+
+.helpline-description {
+  margin: 0;
+  color: #667085;
+  line-height: 1.6;
+}
+
+.helpline-contact {
+  display: grid;
+  gap: 0.85rem;
+  margin-top: auto;
+}
+
+.helpline-number {
+  color: #101828;
+  font-size: 1.18rem;
+  font-weight: 900;
+}
+
+.support-section {
+  background: #ffffff;
+}
+
+.support-grid {
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: 1rem;
+}
+
+.support-card {
+  padding: 1.35rem;
+  transition: transform 0.2s ease, box-shadow 0.2s ease, border-color 0.2s ease;
+}
+
+.support-icon {
+  display: grid;
+  width: 48px;
+  height: 48px;
+  margin-bottom: 1rem;
+  place-items: center;
+  border-radius: 8px;
+  background: linear-gradient(135deg, #003366, #0e4f77);
+  color: #ffdf80;
+}
+
+.support-card h4 {
+  margin: 0 0 0.55rem;
+  color: #003366;
+  font-size: 1.1rem;
+  font-weight: 850;
+}
+
+.support-card p {
+  margin: 0;
+  color: #667085;
+  line-height: 1.6;
+}
+
+.contact-section {
+  background:
+    linear-gradient(135deg, rgba(0, 51, 102, 0.07), rgba(255, 153, 51, 0.1)),
+    #f6f8fb;
+}
+
+.contact-form-container {
+  max-width: 860px;
+  margin: 0 auto;
+}
+
+.helpline-form {
+  padding: 2rem;
+}
+
+.form-row {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 1rem;
+  margin-bottom: 1rem;
+}
+
+.form-group {
+  display: flex;
+  flex-direction: column;
+}
+
+.form-group label {
+  margin-bottom: 0.5rem;
+  color: #003366;
+  font-weight: 850;
+}
+
+.form-group input,
+.form-group select,
+.form-group textarea {
+  width: 100%;
+  padding: 0.8rem 0.9rem;
+  border: 1px solid rgba(0, 51, 102, 0.16);
+  border-radius: 8px;
+  background: #ffffff;
+  color: #172235;
+  font: inherit;
+  transition: border-color 0.2s ease, box-shadow 0.2s ease;
+}
+
+.form-group input:focus,
+.form-group select:focus,
+.form-group textarea:focus {
+  outline: none;
+  border-color: #ff9933;
+  box-shadow: 0 0 0 4px rgba(255, 153, 51, 0.15);
+}
+
+.form-group textarea {
+  min-height: 130px;
+  resize: vertical;
+}
+
+.submit-btn {
+  width: 100%;
+  min-height: 50px;
+  margin-top: 1.2rem;
+  background: linear-gradient(135deg, #003366, #0e4f77);
+  color: #ffffff;
+  font-size: 1rem;
+}
+
+@media (max-width: 1040px) {
+  .emergency-grid,
+  .support-grid {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+}
+
+@media (max-width: 780px) {
+  .helpline-hero {
+    padding: 7.5rem 0 4rem;
+  }
+
+  .helpline-hero-inner,
+  .form-row {
+    grid-template-columns: 1fr;
+  }
+
+  .hero-actions {
+    display: grid;
+  }
+
+  .call-btn,
+  .secondary-call {
+    width: 100%;
+  }
+}
+
+@media (max-width: 560px) {
+  .emergency-section,
+  .support-section,
+  .contact-section {
+    padding: 3.5rem 0;
+  }
+
+  .emergency-grid,
+  .support-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .helpline-form {
+    padding: 1.2rem;
+  }
+}

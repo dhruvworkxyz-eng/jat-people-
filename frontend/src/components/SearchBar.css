@@ -1,0 +1,51 @@
+/* SearchBar Component Styles */
+.search-bar {
+  position: relative;
+  max-width: 500px;
+  margin: 0 auto;
+}
+
+.search-input {
+  width: 100%;
+  padding: 12px 20px;
+  padding-right: 50px;
+  border: 2px solid var(--border-color);
+  border-radius: var(--border-radius-xl);
+  font-size: 16px;
+  background: var(--bg-white);
+  transition: var(--transition);
+  outline: none;
+}
+
+.search-input:focus {
+  border-color: var(--secondary-color);
+  box-shadow: 0 0 0 3px rgba(255, 153, 51, 0.1);
+}
+
+.search-icon {
+  position: absolute;
+  right: 15px;
+  top: 50%;
+  transform: translateY(-50%);
+  color: var(--text-light);
+  font-size: 18px;
+  pointer-events: none;
+}
+
+/* Responsive */
+@media (max-width: 768px) {
+  .search-bar {
+    max-width: 100%;
+  }
+
+  .search-input {
+    padding: 10px 16px;
+    padding-right: 45px;
+    font-size: 14px;
+  }
+
+  .search-icon {
+    right: 12px;
+    font-size: 16px;
+  }
+}

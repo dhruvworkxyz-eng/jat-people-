@@ -1,0 +1,129 @@
+/* Profession Wise Jat Page Styles */
+.profession-wise-jat {
+  min-height: 100vh;
+}
+
+/* Hero Section */
+.profession-hero {
+  background: linear-gradient(135deg, #003366, #001122);
+  color: white;
+  padding: 8rem 0 6rem;
+  text-align: center;
+}
+
+.profession-hero h1 {
+  font-size: clamp(2.5rem, 5vw, 4rem);
+  font-weight: 800;
+  margin-bottom: 1rem;
+  text-shadow: 0 4px 20px rgba(0, 0, 0, 0.3);
+}
+
+.hero-subtitle {
+  font-size: clamp(1rem, 2vw, 1.25rem);
+  opacity: 0.9;
+  max-width: 600px;
+  margin: 0 auto;
+}
+
+/* Professions Section */
+.professions-section {
+  background: linear-gradient(135deg, rgba(0, 51, 102, 0.05), rgba(255, 153, 51, 0.05));
+  padding: 5rem 0;
+}
+
+.profession-alphabet-list {
+  display: grid;
+  gap: 2.25rem;
+  margin: 2.5rem 0 4rem;
+}
+
+.profession-letter-section {
+  display: grid;
+  gap: 1rem;
+}
+
+.profession-letter-heading {
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+  border-bottom: 1px solid rgba(0, 51, 102, 0.12);
+  padding-bottom: 0.75rem;
+}
+
+.profession-letter-heading span {
+  display: grid;
+  width: 48px;
+  height: 48px;
+  place-items: center;
+  border-radius: 8px;
+  background: #003366;
+  color: #ffffff;
+  font-size: 1.35rem;
+  font-weight: 800;
+}
+
+.profession-letter-heading p {
+  margin: 0;
+  color: #596272;
+  font-weight: 700;
+}
+
+.professions-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
+  gap: 2rem;
+}
+
+/* Career Guidance */
+.career-guidance {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+  gap: 2rem;
+}
+
+.guidance-card {
+  background: white;
+  border-radius: 15px;
+  padding: 2rem;
+  box-shadow: 0 8px 25px rgba(0, 0, 0, 0.1);
+  border: 1px solid rgba(0, 123, 191, 0.1);
+  transition: all 0.3s ease;
+}
+
+.guidance-card:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 15px 35px rgba(0, 0, 0, 0.15);
+}
+
+.guidance-card h4 {
+  font-size: 1.3rem;
+  color: #003366;
+  margin-bottom: 1rem;
+  font-weight: 600;
+}
+
+.guidance-card p {
+  color: #666;
+  line-height: 1.6;
+}
+
+/* Responsive */
+@media (max-width: 768px) {
+  .profession-hero {
+    padding: 6rem 0 4rem;
+  }
+
+  .professions-grid {
+    grid-template-columns: 1fr;
+    gap: 1rem;
+  }
+
+  .profession-letter-heading span {
+    width: 42px;
+    height: 42px;
+  }
+
+  .career-guidance {
+    grid-template-columns: 1fr;
+  }
+}

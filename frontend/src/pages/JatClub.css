@@ -1,0 +1,349 @@
+.jat-club {
+  min-height: 100vh;
+  background: #071b3a;
+}
+
+.club-hero {
+  min-height: 360px;
+  display: flex;
+  align-items: center;
+  color: white;
+  text-align: center;
+  background:
+    linear-gradient(90deg, rgba(4, 22, 52, 0.9), rgba(29, 78, 216, 0.74)),
+    url('/images/jat-community-gathering.png') center / cover;
+}
+
+.club-hero h1 {
+  font-size: clamp(2.4rem, 5vw, 4.6rem);
+  margin-bottom: 1rem;
+  font-weight: 800;
+}
+
+.club-hero .hero-subtitle {
+  max-width: 720px;
+  margin: 0 auto;
+  color: rgba(255, 255, 255, 0.9);
+  font-size: 1.16rem;
+  line-height: 1.7;
+}
+
+.club-join-section,
+.online-community-section,
+.clubs-section {
+  padding: 4.5rem 0;
+}
+
+.club-join-section {
+  background: linear-gradient(180deg, #071b3a 0%, #0b2c61 100%);
+}
+
+.jat-club .section-title h2,
+.jat-club .section-title p {
+  color: white;
+}
+
+.jat-club .section-title p {
+  opacity: 0.82;
+}
+
+.club-choice-grid {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 1.5rem;
+  margin-top: 2.5rem;
+}
+
+.club-choice-card,
+.community-composer,
+.community-post,
+.community-empty,
+.club-card {
+  background: #0f2f66;
+  border: 1px solid rgba(147, 197, 253, 0.2);
+  border-radius: 8px;
+  box-shadow: 0 18px 45px rgba(2, 8, 23, 0.28);
+}
+
+.club-choice-card {
+  padding: 2rem;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  gap: 1rem;
+}
+
+.club-choice-card > svg {
+  width: 44px;
+  height: 44px;
+  color: #15803d;
+}
+
+.website-choice > svg {
+  color: #1d4ed8;
+}
+
+.club-choice-card h3,
+.club-card h3,
+.community-empty h3 {
+  margin: 0;
+  color: #eff6ff;
+  font-size: 1.35rem;
+}
+
+.club-choice-card p,
+.club-description,
+.club-activities p,
+.community-empty p {
+  color: #bfdbfe;
+  line-height: 1.65;
+  margin: 0;
+}
+
+.join-club-btn,
+.community-post-btn {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 0.55rem;
+  min-height: 46px;
+  padding: 0.85rem 1.15rem;
+  border: none;
+  border-radius: 8px;
+  background: #15803d;
+  color: white;
+  font-weight: 800;
+  text-decoration: none;
+  cursor: pointer;
+  transition: transform 0.2s ease, box-shadow 0.2s ease, background 0.2s ease;
+}
+
+.join-club-btn:hover,
+.community-post-btn:hover {
+  background: #166534;
+  color: white;
+  transform: translateY(-1px);
+  box-shadow: 0 12px 26px rgba(21, 128, 61, 0.24);
+}
+
+.join-club-btn.secondary {
+  background: #1d4ed8;
+}
+
+.join-club-btn.secondary:hover {
+  background: #1e40af;
+  box-shadow: 0 12px 26px rgba(29, 78, 216, 0.22);
+}
+
+.online-community-section {
+  background: #0b2c61;
+}
+
+.community-layout {
+  display: grid;
+  grid-template-columns: minmax(280px, 0.8fr) minmax(320px, 1.2fr);
+  gap: 1.5rem;
+  margin-top: 2.5rem;
+  align-items: start;
+}
+
+.community-composer {
+  padding: 1.5rem;
+  display: grid;
+  gap: 1rem;
+}
+
+.community-composer label {
+  display: grid;
+  gap: 0.45rem;
+  color: #eff6ff;
+  font-weight: 800;
+}
+
+.community-composer label span {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.45rem;
+}
+
+.community-composer input,
+.community-composer textarea {
+  width: 100%;
+  border: 1px solid rgba(15, 23, 42, 0.16);
+  border-radius: 8px;
+  padding: 0.85rem 0.95rem;
+  font: inherit;
+  color: #eff6ff;
+  background: #08204a;
+}
+
+.community-composer input::placeholder,
+.community-composer textarea::placeholder {
+  color: #93c5fd;
+}
+
+.community-composer textarea {
+  resize: vertical;
+  min-height: 140px;
+}
+
+.community-post-btn {
+  width: 100%;
+}
+
+.community-notice {
+  margin: 0;
+  color: #bfdbfe;
+  font-weight: 700;
+}
+
+.community-feed {
+  display: grid;
+  gap: 1rem;
+}
+
+.community-post,
+.community-empty {
+  padding: 1.25rem;
+}
+
+.community-post-header {
+  display: flex;
+  justify-content: space-between;
+  gap: 1rem;
+  margin-bottom: 0.75rem;
+  color: #eff6ff;
+}
+
+.community-author {
+  display: flex;
+  align-items: center;
+  gap: 0.8rem;
+  min-width: 0;
+}
+
+.community-avatar {
+  width: 44px;
+  height: 44px;
+  flex: 0 0 44px;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: 50%;
+  background:
+    linear-gradient(135deg, rgba(59, 130, 246, 0.95), rgba(14, 165, 233, 0.9)),
+    url('/haryana-jat-logo.svg') center / 70% no-repeat;
+  color: white;
+  border: 2px solid rgba(191, 219, 254, 0.55);
+  box-shadow: 0 10px 24px rgba(2, 8, 23, 0.25);
+  font-weight: 900;
+  font-size: 0.88rem;
+}
+
+.community-author strong,
+.community-author span {
+  display: block;
+}
+
+.community-author strong {
+  overflow-wrap: anywhere;
+}
+
+.community-author div > span {
+  color: #bfdbfe;
+  font-size: 0.84rem;
+  font-weight: 700;
+}
+
+.community-post-header time {
+  color: #bfdbfe;
+  font-size: 0.85rem;
+  white-space: nowrap;
+}
+
+.community-post p {
+  margin: 0 0 0.85rem;
+  color: #dbeafe;
+  line-height: 1.65;
+}
+
+.community-link {
+  display: block;
+  color: #93c5fd;
+  font-weight: 700;
+  word-break: break-word;
+  margin-bottom: 0.75rem;
+}
+
+.community-media {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.45rem;
+  padding: 0.45rem 0.7rem;
+  border-radius: 999px;
+  background: rgba(59, 130, 246, 0.16);
+  color: #bfdbfe;
+  font-weight: 800;
+  max-width: 100%;
+  overflow-wrap: anywhere;
+}
+
+.clubs-section {
+  background: linear-gradient(180deg, #0b2c61 0%, #071b3a 100%);
+}
+
+.clubs-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+  gap: 1.25rem;
+  margin-top: 2.5rem;
+}
+
+.club-card {
+  padding: 1.35rem;
+  display: grid;
+  gap: 1rem;
+}
+
+.club-header {
+  display: flex;
+  justify-content: space-between;
+  gap: 1rem;
+  align-items: flex-start;
+}
+
+.club-members {
+  flex: 0 0 auto;
+  color: #dbeafe;
+  background: rgba(59, 130, 246, 0.2);
+  border-radius: 999px;
+  padding: 0.35rem 0.65rem;
+  font-size: 0.82rem;
+  font-weight: 800;
+}
+
+.club-activities h4 {
+  margin: 0 0 0.35rem;
+  color: #eff6ff;
+}
+
+@media (max-width: 820px) {
+  .club-choice-grid,
+  .community-layout {
+    grid-template-columns: 1fr;
+  }
+
+  .club-hero {
+    min-height: 320px;
+    padding: 4rem 0;
+  }
+
+  .club-header,
+  .community-post-header {
+    flex-direction: column;
+  }
+
+  .community-post-header time {
+    white-space: normal;
+  }
+}

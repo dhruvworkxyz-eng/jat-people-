@@ -1,0 +1,99 @@
+/* Terms & Conditions Page Styles */
+.terms-conditions {
+  min-height: 100vh;
+}
+
+/* Hero Section */
+.terms-hero {
+  background: linear-gradient(135deg, #003366, #001122);
+  color: white;
+  padding: 8rem 0 6rem;
+  text-align: center;
+}
+
+.terms-hero h1 {
+  font-size: clamp(2.5rem, 5vw, 4rem);
+  font-weight: 800;
+  margin-bottom: 1rem;
+  text-shadow: 0 4px 20px rgba(0, 0, 0, 0.3);
+}
+
+.hero-subtitle {
+  font-size: clamp(1rem, 2vw, 1.25rem);
+  opacity: 0.9;
+  max-width: 600px;
+  margin: 0 auto;
+}
+
+/* Terms Section */
+.terms-section {
+  background: linear-gradient(135deg, rgba(0, 51, 102, 0.05), rgba(255, 153, 51, 0.05));
+  padding: 5rem 0;
+}
+
+.terms-content {
+  max-width: 800px;
+  margin: 0 auto;
+}
+
+.terms-article {
+  background: white;
+  border-radius: 15px;
+  padding: 2rem;
+  margin-bottom: 2rem;
+  box-shadow: 0 8px 25px rgba(0, 0, 0, 0.1);
+  border: 1px solid rgba(0, 123, 191, 0.1);
+}
+
+.terms-article h2 {
+  font-size: 1.5rem;
+  color: #003366;
+  margin-bottom: 1rem;
+  font-weight: 700;
+}
+
+.terms-article p {
+  color: #666;
+  line-height: 1.7;
+  margin-bottom: 1rem;
+}
+
+.terms-article ul {
+  color: #666;
+  line-height: 1.7;
+  margin-left: 1.5rem;
+  margin-bottom: 1rem;
+}
+
+.terms-article li {
+  margin-bottom: 0.5rem;
+}
+
+.terms-article p:last-child,
+.terms-article ul:last-child {
+  margin-bottom: 0;
+}
+
+.terms-article strong {
+  color: #003366;
+  font-weight: 600;
+}
+
+/* Responsive */
+@media (max-width: 768px) {
+  .terms-hero {
+    padding: 6rem 0 4rem;
+  }
+
+  .terms-section {
+    padding: 3rem 0;
+  }
+
+  .terms-article {
+    padding: 1.5rem;
+  }
+
+  .terms-article h2 {
+    font-size: 1.3rem;
+  }
+}

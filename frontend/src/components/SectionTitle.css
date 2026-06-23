@@ -1,0 +1,68 @@
+/* Section Title Styles */
+.section-title {
+  margin-bottom: 3rem;
+}
+
+.section-title.centered {
+  text-align: center;
+}
+
+.title {
+  font-size: clamp(2rem, 4vw, 3rem);
+  font-weight: 700;
+  color: #0d2742;
+  margin-bottom: 0.5rem;
+  position: relative;
+  display: inline-block;
+  letter-spacing: 0;
+}
+
+.centered .title {
+  display: block;
+}
+
+.subtitle {
+  font-size: 1.1rem;
+  color: #5d6776;
+  line-height: 1.6;
+  margin-bottom: 2rem;
+  max-width: 600px;
+}
+
+.centered .subtitle {
+  margin: 0 auto 2rem;
+}
+
+.title-decoration {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 10px;
+  margin-top: 1rem;
+}
+
+.decoration-line {
+  width: 40px;
+  height: 2px;
+  background: linear-gradient(90deg, #0d2742, #bf7a24);
+  border-radius: 1px;
+}
+
+.decoration-dot {
+  width: 8px;
+  height: 8px;
+  background: #f1b84b;
+  border-radius: 50%;
+  box-shadow: 0 0 10px rgba(241, 184, 75, 0.5);
+}
+
+/* Responsive */
+@media (max-width: 768px) {
+  .title {
+    font-size: 2rem;
+  }
+
+  .decoration-line {
+    width: 30px;
+  }
+}

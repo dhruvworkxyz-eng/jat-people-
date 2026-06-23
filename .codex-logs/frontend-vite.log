@@ -1,0 +1,46 @@
+
+> frontend2@0.0.0 dev
+> vite --host 127.0.0.1 --port 5173
+
+[2m15:15:49[22m [36m[1m[vite][22m[39m [90m[2m(client)[22m[39m Re-optimizing dependencies because vite config has changed
+
+  [32m[1mVITE[22m v8.0.10[39m  [2mready in [0m[1m284[22m[2m[0m ms[22m
+
+  [32m➜[39m  [1mLocal[22m:   [36mhttp://127.0.0.1:[1m5173[22m/[39m
+[2m[32m  ➜[39m[22m[2m  press [22m[1mh + enter[22m[2m to show help[22m
+[2m15:18:07[22m [36m[1m[vite][22m[39m [90m[2m(client)[22m[39m [32mhmr update [39m[2m/src/components/Navbar.tsx[22m
+[2m15:34:35[22m [31m[1m[vite][22m[39m [31m[2m(client)[22m[39m [2m[console.error] [22mEncountered two children with the same key, `/contact-us-Contact`. Keys should be unique so that components maintain their identity across updates. Non-unique keys may cause children to be duplicated and/or omitted — the behavior is unsupported and could change in a future version.
+[2m15:34:38[22m [31m[1m[vite][22m[39m [31m[2m(client)[22m[39m [2m[console.error] [22mEncountered two children with the same key, `/contact-us-Contact`. Keys should be unique so that components maintain their identity across updates. Non-unique keys may cause children to be duplicated and/or omitted — the behavior is unsupported and could change in a future version.
+[2m15:34:39[22m [31m[1m[vite][22m[39m [31m[2m(client)[22m[39m [2m[console.error] [22mEncountered two children with the same key, `/contact-us-Contact`. Keys should be unique so that components maintain their identity across updates. Non-unique keys may cause children to be duplicated and/or omitted — the behavior is unsupported and could change in a future version.
+[2m15:34:40[22m [31m[1m[vite][22m[39m [31m[2m(client)[22m[39m [2m[console.error] [22mEncountered two children with the same key, `/contact-us-Contact`. Keys should be unique so that components maintain their identity across updates. Non-unique keys may cause children to be duplicated and/or omitted — the behavior is unsupported and could change in a future version.
+[2m16:11:42[22m [36m[1m[vite][22m[39m [90m[2m(client)[22m[39m [32mhmr update [39m[2m/src/components/Navbar.css[22m
+[2m16:14:36[22m [36m[1m[vite][22m[39m [90m[2m(client)[22m[39m [32mhmr update [39m[2m/src/components/Navbar.css[22m
+[2m16:14:56[22m [36m[1m[vite][22m[39m [90m[2m(client)[22m[39m [32mhmr update [39m[2m/src/components/Navbar.css[22m
+[2m16:15:18[22m [36m[1m[vite][22m[39m [90m[2m(client)[22m[39m [32mhmr update [39m[2m/src/components/Navbar.css[22m
+[2m16:16:53[22m [36m[1m[vite][22m[39m [90m[2m(client)[22m[39m [32mhmr update [39m[2m/src/components/Navbar.css[22m
+[2m16:18:46[22m [36m[1m[vite][22m[39m [90m[2m(client)[22m[39m [32mhmr update [39m[2m/src/components/Navbar.css[22m
+[2m16:19:41[22m [36m[1m[vite][22m[39m [90m[2m(client)[22m[39m [32mhmr update [39m[2m/src/components/Navbar.css[22m
+[2m16:21:19[22m [36m[1m[vite][22m[39m [90m[2m(client)[22m[39m [32mhmr update [39m[2m/src/components/Navbar.css[22m
+[2m16:22:09[22m [36m[1m[vite][22m[39m [90m[2m(client)[22m[39m [32mhmr update [39m[2m/src/components/Navbar.css[22m
+[2m16:22:55[22m [36m[1m[vite][22m[39m [90m[2m(client)[22m[39m [32mhmr update [39m[2m/src/components/Navbar.css[22m
+[2m16:23:37[22m [36m[1m[vite][22m[39m [90m[2m(client)[22m[39m [32mhmr update [39m[2m/src/components/Navbar.css[22m
+[2m16:24:21[22m [36m[1m[vite][22m[39m [90m[2m(client)[22m[39m [32mhmr update [39m[2m/src/components/Navbar.css[22m
+[2m16:25:07[22m [36m[1m[vite][22m[39m [90m[2m(client)[22m[39m [32mhmr update [39m[2m/src/components/Navbar.css[22m
+[2m16:25:48[22m [36m[1m[vite][22m[39m [90m[2m(client)[22m[39m [32mhmr update [39m[2m/src/components/Navbar.css[22m
+[2m16:26:28[22m [36m[1m[vite][22m[39m [90m[2m(client)[22m[39m [32mhmr update [39m[2m/src/components/Navbar.css[22m
+[2m16:27:11[22m [36m[1m[vite][22m[39m [90m[2m(client)[22m[39m [32mhmr update [39m[2m/src/components/Navbar.css[22m
+[2m16:27:49[22m [36m[1m[vite][22m[39m [90m[2m(client)[22m[39m [32mhmr update [39m[2m/src/components/Navbar.css[22m
+[2m16:27:53[22m [36m[1m[vite][22m[39m [90m[2m(client)[22m[39m [32mhmr update [39m[2m/src/components/Navbar.css[22m
+[2m16:28:24[22m [36m[1m[vite][22m[39m [90m[2m(client)[22m[39m [32mhmr update [39m[2m/src/components/Navbar.css[22m
+[2m16:28:57[22m [36m[1m[vite][22m[39m [90m[2m(client)[22m[39m [32mhmr update [39m[2m/src/components/Navbar.css[22m
+[2m16:29:10[22m [36m[1m[vite][22m[39m [90m[2m(client)[22m[39m [32mhmr update [39m[2m/src/components/Navbar.tsx[22m
+[2m16:29:50[22m [36m[1m[vite][22m[39m [90m[2m(client)[22m[39m [32mhmr update [39m[2m/src/components/Navbar.css[22m
+[2m16:30:28[22m [36m[1m[vite][22m[39m [90m[2m(client)[22m[39m [32mhmr update [39m[2m/src/components/Navbar.css[22m
+[2m16:31:06[22m [36m[1m[vite][22m[39m [90m[2m(client)[22m[39m [32mhmr update [39m[2m/src/components/Navbar.css[22m
+[2m16:31:14[22m [36m[1m[vite][22m[39m [90m[2m(client)[22m[39m [32mhmr update [39m[2m/src/components/Navbar.css[22m
+[2m16:33:56[22m [36m[1m[vite][22m[39m [90m[2m(client)[22m[39m [32mhmr update [39m[2m/src/components/Navbar.tsx[22m
+[2m16:34:13[22m [36m[1m[vite][22m[39m [90m[2m(client)[22m[39m [32mhmr update [39m[2m/src/components/Navbar.tsx[22m
+[2m16:47:21[22m [36m[1m[vite][22m[39m [90m[2m(client)[22m[39m [32mhmr update [39m[2m/src/components/Navbar.tsx[22m
+[2m16:54:51[22m [36m[1m[vite][22m[39m [90m[2m(client)[22m[39m [32mhmr update [39m[2m/src/components/Navbar.tsx[22m
+[2m16:54:51[22m [36m[1m[vite][22m[39m [90m[2m(client)[22m[39m [32mhmr update [39m[2m/src/components/Navbar.tsx[22m
+[2m16:55:01[22m [36m[1m[vite][22m[39m [90m[2m(client)[22m[39m [32mhmr update [39m[2m/src/components/Navbar.css[22m
